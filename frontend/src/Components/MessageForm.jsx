@@ -51,7 +51,7 @@ export default function MessageForm({ onNewMessage }) {
 
         //add new message
         try {
-            const res = await axios.post("http://localhost:5000/api/messages", {
+            const res = await axios.post("https://guestbook-eviu.onrender.com/api/messages", {
                 name: name.trim(),
                 text: text.trim()
             });

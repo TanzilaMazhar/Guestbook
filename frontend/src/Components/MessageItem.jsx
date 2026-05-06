@@ -25,7 +25,7 @@ export default function MessageItem({ message, onUpdateMessage, onDeleteMessage 
             return;
         }
         try {
-            const res = await axios.put(`http://localhost:5000/api/messages/${message.id}`, { text: editText.trim() });
+            const res = await axios.put(`https://guestbook-eviu.onrender.com/api/messages/${message.id}`, { text: editText.trim() });
             onUpdateMessage(res.data); // Update parent state
             setIsEditing(false);
             toast.success("Message updated!");
@@ -38,7 +38,7 @@ export default function MessageItem({ message, onUpdateMessage, onDeleteMessage 
     // Delete message
     const handleDelete = async () => {
         try {
-            await axios.delete(`http://localhost:5000/api/messages/${message.id}`);
+            await axios.delete(`https://guestbook-eviu.onrender.com/api/messages/${message.id}`);
             onDeleteMessage(message.id); // Remove from parent state
             toast.success("Message deleted!");
         } catch (err) {

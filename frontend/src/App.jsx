@@ -18,7 +18,7 @@ function AppContent() {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/messages");
+        const res = await axios.get("https://guestbook-eviu.onrender.com/api/messages");
         setMessages(res.data);
       } catch (err) {
         console.error(err);
@@ -89,4 +89,3 @@ function App() {
 }
 
 export default App;
-

@@ -9,7 +9,7 @@ function MessageList({ messages,setMessages, onUpdateMessage, onDeleteMessage })
     useEffect(() => {
         async function fetchMessages() {
             try {
-                const res = await axios.get("http://localhost:5000/api/messages");
+                const res = await axios.get("https://guestbook-eviu.onrender.com/api/messages");
                 if (messages.length === 0) {
                     setMessages(res.data);
                 }
